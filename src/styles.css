@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body {
+  padding: 20px;
+}
+
+.btn.btn-primary {
+  margin-top: 10px;
+  float: right;
+}
+
+hr {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}

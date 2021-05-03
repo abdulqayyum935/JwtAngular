@@ -1,0 +1,50 @@
+<label for="exampleDataList" class="form-label">Item to Add</label>
+<input
+  class="form-control"
+  list="datalistOptions"
+  id="exampleDataList"
+  placeholder="Type to search..."
+  [formControl]="itemToInsert"
+/>
+<!-- <datalist id="datalistOptions">
+  <option value="San Francisco"></option>
+  <option value="New York"></option>
+  <option value="Seattle"></option>
+  <option value="Los Angeles"></option>
+  <option value="Chicago"></option>
+</datalist> -->
+<button class="btn btn-primary" (click)="showVal()">Add</button>
+<hr />
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col" colspan="2">Actions {{ Items && Items.length }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- <tr>
+      <th scope="row">1</th>
+      <td style="min-width: 270px">test test</td>
+      <td style="width: 100%; text-align: right">
+        <input class="btn btn-secondary" type="button" value="Edit" /> |
+        <input class="btn btn-danger" type="button" value="Delete" />
+      </td>
+    </tr> -->
+    <tr *ngFor="let itm of Items; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td style="min-width: 270px">{{ itm.title }}</td>
+      <td style="width: 100%; text-align: right">
+        <input class="btn btn-secondary" type="button" value="Edit" /> |
+        <input
+          class="btn btn-danger"
+          (click)="Delete(i)"
+          type="button"
+          value="Delete"
+        />
+      </td>
+    </tr>
+  </tbody>
+</table>
